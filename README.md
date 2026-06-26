@@ -1,3 +1,7 @@
+<img width="1723" height="913" alt="image" src="https://github.com/user-attachments/assets/91d042a1-f648-413c-b0cd-9e6b722a98a6" />
+
+
+
 # NeoByte Games – Capstone 3 Backend API
 
 ## Project Description
