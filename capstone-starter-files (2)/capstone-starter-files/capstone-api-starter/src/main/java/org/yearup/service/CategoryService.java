@@ -24,8 +24,13 @@ public class CategoryService
 
     public Category getById(int categoryId)
     {
-        // get category by id
-        return categoryRepository.findById(categoryId).orElse(null);
+        return categoryRepository
+                .findById(categoryId)
+                .orElseThrow(() -> new org.springframework.web.server.ResponseStatusException(
+                        org.springframework.http.HttpStatus.NOT_FOUND,
+                        "Category not found"
+                )
+                );
     }
 
     public Category create(Category category)
@@ -50,6 +55,7 @@ public class CategoryService
 
     public void delete(int categoryId)
     {
+        categoryRepository.deleteById(categoryId);
         // delete category
     }
 }

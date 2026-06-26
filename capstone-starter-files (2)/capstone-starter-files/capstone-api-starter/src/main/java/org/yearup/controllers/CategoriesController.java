@@ -44,10 +44,12 @@ public class CategoriesController
 
     // add the appropriate annotation for a get action
     @GetMapping("/{id}")
-    public Category getById(@PathVariable int id)
+    public ResponseEntity<Category> getById(@PathVariable int id)
     {
-        // get the category by id
-        return categoryService.getById(id);    }
+        Category category = categoryService.getById(id);
+
+        return ResponseEntity.ok(category);
+    }
 
     // the url to return all products in category 1 would look like this
     // https://localhost:8080/categories/1/products
@@ -83,9 +85,13 @@ public class CategoriesController
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteCategory(@PathVariable int id)
     {
         // delete the category by id and return status 204 No Content
-        return null;
+        categoryService.delete(id);
+
+        return ResponseEntity.noContent().build();
     }
 }
