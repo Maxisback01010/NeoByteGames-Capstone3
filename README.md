@@ -143,6 +143,9 @@ Product search bug fix results
 
 
 ---
+## Documentation
+[NeoByte Games Capstone 3 Master Project Plan - Google Docs.pdf](https://github.com/user-attachments/files/29392387/NeoByte.Games.Capstone.3.Master.Project.Plan.-.Google.Docs.pdf)
+
 
 ## Reflection
 
